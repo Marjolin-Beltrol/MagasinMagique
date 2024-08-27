@@ -89,8 +89,21 @@ class MagasinTest {
         assertEquals(0, app.items[0].sellIn);
 
     }
-//    @Test
-//    void
+
+    private void ItemsCreateGoldenMasterData(String name, int sellIn, int quality){
+        Item[] items = new Item[]{new Item("Comté", 2, 10),
+                new Item("Pass VIP Concert", 2, 50),
+                new Item("Kryptonite", 5, 80),
+                new Item("Comté", 2, 10),
+                new Item("Diot", 5, 5)};
+        Magasin goldenMag = new Magasin(items);
+        for(int i=0; i <= items.length; i++){
+            for(int j = 0; items[i].sellIn != 0; j++){
+                goldenMag.updateQuality();
+            }
+
+        }
+    }
 }
 
 
